@@ -1,7 +1,7 @@
 /*This resets the default styling from the browser and applies some default styles of our own*/
 html {
     box-sizing: border-box;
-    font-size: 16px;
+    font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
     }
 
@@ -24,177 +24,63 @@ img {
     height: auto;
     }
 
+    /* Default Styles */
+
+    :root{
+        --primary: #007bff;
+        --secondary: #6c757d;
+        --success: #28a745;
+        --info: #17a2b8;
+        --warning: #ffc107;
+        --danger: #dc3545;
+        --light: #f8f9fa;
+        --dark: #343a40;
+        --padding-sm: 16px;
+        --padding-md: 32px;
+        --padding-lg: 64px;
+        --padding-xl: 128px;
+    }
 h1 {
     font-size: 2.5rem;
-    font-weight:100;
+    font-weight:700;
     }
 
-
-    /* By adding a text stroke on our white text, we can make sure it is always visible regardless of the background colour. */
 h2 { 
     font-size:1.9rem;
-    font-weight:700;
-    margin-bottom:5px;
-    -webkit-text-stroke: 1px black;
-    color: white;
-    text-shadow:
-        -1px -1px 0 #000,  
-        1px -1px 0 #000,
-        -1px 1px 0 #000,
-        1px 1px 0 #000;
-    }
+    font-weight:600;
+}
 
-/* Custom Classes */
-    .emphasis{
-        color:white;
-    }
-    .button, button {
-        padding: 10px 20px;
-        display: inline-block;
-        border: 2px solid #fff;
-        border-radius: 4px;
-        background-color: #fff;
-        font-size: 0.8rem;
-        text-decoration: none;
-        color: #000;
-        text-transform:uppercase;
-        }
-    .button:hover, button:hover{
-        background-color: rebeccapurple;
-        color:white;
-    }
+h3{
+    font-size:1.5rem;
+    font-weight:600;
+}
 
+header, main, footer{
+    padding:var(--padding-md) var(--padding-lg);
+}
 
-/* Header */
-    header {
-        min-height: 70px;
-        padding:20px 40px;
-        }
-    nav {
-        float: right;
-        background-color: #fff;
-        margin-top:20px;
-        }
-    nav a {
-        display: inline-block;
-        color: #000;
-        font-size: 1rem;
-        text-decoration: none;
-        margin: 0 10px;
-        padding: 0.5rem;
-        border-radius:4px;
-    }
-    nav a:hover{
-        background-color:rebeccapurple;
-        color:white;
-    }
-    header img {
-        height: 60px;
-        margin: 10px;
-        display: inline-block;
-        } 
-    .header-text {
-        width: 60%;
-        }
+section{
+    padding: var(--padding-md) 0;
+}
 
-/* Hero Section */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background-color: lavender;
+}
+.logo{
+    max-width:50px;
+    stroke:rebeccapurple;
+}
+nav ul{
+    display:flex;
+    align-items:center;
+    gap:var(--padding-md);
+}
 
-    .hero {
-        height: 50vh;
-        padding: 50px;
-        background-color: #f48fb1;
-        }
-
-/* Columns Section */
-    .columns {
-        display:flex;
-        flex-wrap: wrap;
-        flex-direction:row;
-    }
-    .column {
-        flex-basis:33%;
-        flex-grow:1;
-        padding: 40px;
-        }
-    #column-1 {
-        background-color: #f4d03f;
-        } 
-    #column-2 {
-        background-color: #58d68d;
-        }
-    #column-3 {
-        background-color: #5dade2;
-        }
-    .workshopicon {
-        width: 25px;
-        margin: 10px;
-        }
-    .column .button {
-        background-color: rebeccapurple;
-        margin-top: 10px;
-        color:white;
-        }
-/* Contact Form Section */
-    .contact{
-        padding:50px;
-        text-align:center;
-    }
-   .field-group, .contact .button{
-        width:50%;
-        margin:0 auto 10px;
-   }
-
-   input, select, textarea{
-    background-color:#ddd;
-    font-size:1rem;
-    padding:0.5rem;
-    width:100%;
-    border-radius:4px;
-   }
-   textarea{
-    height:300px;
-   }
-   .contact .button {
-    background-color: rebeccapurple;
-    color:white;
-    }
-    label{
-        display:block;
-        text-align:left;
-        margin-bottom:5px;
-        color:rebeccapurple;
-    }
-
-
-
-/* Footer */
-    footer{
-        background-color:rebeccapurple;
-        text-align:center;
-        padding:20px;
-        color:white;
-    }
-
-    /* @media only screen and (min-width: 600px) {
-        .columns {
-            flex-direction: column;
-            width:100%;
-        }
-        #column-1 {
-            background-color: #ff6600;
-            } 
-      } */
-
-
-
-
-
-       
-
-
-
-
-/* *{
-    border: 1px solid black;
-} */
-
+nav a{
+    text-decoration:none;
+    color:rebeccapurple;
+    font-weight:600;
+}

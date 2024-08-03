@@ -1,17 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Profile</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <p>Hello World - develop</p>
-  <img 
-      src="https://upload.wikimedia.org/wikipedia/commons/4/48/Silly_Dog_%282277051513%29.jpg"   
-      alt="A silly looking dog."
-      width="400px" 
-  />
+  <header>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+      class="logo">
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+    </svg>
+
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="" hero">
+      <h1>My Profile</h1>
+      <p>My name is Jo. I am a web developer. </p>
+      <p>I am passionate about cats, travel, pockets, making things, and data-driven decision making (not necessarily in
+        that order!).</p>
+    </section>
+    <section>
+      <h2>Skills</h2>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Tailwind</li>
+        <li>Laravel</li>
+        <li>Alpine.js</li>
+        <li>Livewire</li>
+        <li>WordPress</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Projects</h2>
+      <article>
+        <h3>Project 1</h3>
+        <p>Some description about my project</p>
+      </article>
+      <article>
+        <h3>Project 2</h3>
+        <p>Some description about my project</p>
+      </article>
+      <article>
+        <h3>Project 3</h3>
+        <p>Some description about my project</p>
+      </article>
+    </section>
+
+  </main>
+  <footer>
+    <h2>Get in Touch!</h2>
+    <form>
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name">
+      </div>
+      <div class="form-group">
+        <label for="your-email">Email</label>
+        <input type="email" id="email" name="your-email">
+      </div>
+      <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message"></textarea>
+      </div>
+    </form>
+  </footer>
 </body>
+
 </html>
