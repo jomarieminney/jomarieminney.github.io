@@ -1,8 +1,10 @@
 /*This resets the default styling from the browser and applies some default styles of our own*/
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Maven+Pro:wght@400..900&display=swap');
+
 html {
     box-sizing: border-box;
     font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Maven Pro', Arial, Helvetica, sans-serif;
     }
 
 *, *:before, *:after {
@@ -27,22 +29,36 @@ img {
     /* Default Styles */
 
     :root{
-        --primary: #007bff;
-        --secondary: #6c757d;
-        --success: #28a745;
-        --info: #17a2b8;
-        --warning: #ffc107;
-        --danger: #dc3545;
-        --light: #f8f9fa;
-        --dark: #343a40;
+        --brand: #a21caf;
+        --brand-dark: #701a75;
+        --brand-bg: #fae8ff;
+        --action: #db2777;
+        --action-dark:#9d174d;
+        --base-50: #f8fafc;
+        --base-100: #f1f5f9;
+        --base-200: #e2e8f0;
+        --base-300: #cbd5e1;
+        --base-400: #94a3b8;
+        --base-500: #64748b;
+        --base-600: #475569;
+        --base-700: #334155;
+        --base-800: #1e293b;
+        --base-900: #0f172a;
+        --base-950: #020617;
         --padding-sm: 16px;
         --padding-md: 32px;
         --padding-lg: 64px;
         --padding-xl: 128px;
+        --hb-width: 33px;
+        --hb-height: 34px;
+        --hb-stroke: 4px;
+        --hb-gap: 5px;
+        --default-shadow: 0 0 32px rgba(112, 26, 117, 0.2);
     }
 h1 {
     font-size: 2.5rem;
-    font-weight:700;
+    font-family:'Amatic SC';
+    font-weight:bold;
     }
 
 h2 { 
@@ -67,20 +83,96 @@ header{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background-color: lavender;
+    background-color: var(--brand-bg);
 }
-.logo{
-    max-width:50px;
-    stroke:rebeccapurple;
+header .avatar{
+    max-width:100px;
+    margin-bottom:calc(-0.75 * var(--padding-lg));
+    margin-left:-2px;
+
 }
-nav ul{
-    display:flex;
-    align-items:center;
-    gap:var(--padding-md);
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-nav a{
-    text-decoration:none;
-    color:rebeccapurple;
-    font-weight:600;
+.menuToggle {
+    position: relative;
+}
+
+.menu-checkbox {
+    opacity: 0;
+    z-index: 100;
+    position: absolute;
+    width:var(--hb-width);
+    height:var(--hb-height);
+}
+
+.menu-icon {
+    display: block;
+    cursor: pointer;
+    z-index:101;
+    position:relative;
+}
+
+.menu-bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--brand);
+    transition: all 0.3s;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: -100%; /* Initially position the menu off-screen */
+    min-width: 200px;
+    height: 100%;
+    background-color: var(--brand-bg);
+    flex-direction: column;
+    align-items: center;
+    transition: right 0.3s ease; 
+    border-left: 3px solid var(--brand);
+    box-shadow: var(--default-shadow);
+    
+}
+
+.menu li {
+    margin: 10px 0;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: var(--brand-dark);
+    font-weight:500;
+    font-size:1.1em;
+}
+
+.menu-checkbox:checked ~ .menu {
+    right: 0; /* Slide the menu into view */
+}
+
+@media (min-width: 769px) {
+    .menu {
+        position: relative;
+        flex-direction: row;
+        background-color: transparent;
+        height: auto;
+        width: auto;
+        right: auto;
+        transition: none;
+    }
+
+
+
+    .menu-icon {
+        display: none;
+    }
 }
