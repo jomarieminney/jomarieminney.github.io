@@ -45,25 +45,35 @@ img {
         --base-800: #1e293b;
         --base-900: #0f172a;
         --base-950: #020617;
-        --padding-sm: 16px;
-        --padding-md: 32px;
-        --padding-lg: 64px;
-        --padding-xl: 128px;
+        --padding-sm: 8px;
+        --padding-md: 16px;
+        --padding-lg: 32px;
+        --padding-xl: 64px;
         --hb-width: 33px;
         --hb-height: 34px;
         --hb-stroke: 4px;
         --hb-gap: 5px;
         --default-shadow: 0 0 32px rgba(112, 26, 117, 0.2);
     }
-h1 {
+p{
+    line-height:1.65; 
+}
+p:not(:last-child){
+    margin-bottom:var(--padding-sm); 
+}
+    h1 {
     font-size: 2.5rem;
     font-family:'Amatic SC';
     font-weight:bold;
+    margin-bottom:var(--padding-sm)
     }
 
 h2 { 
     font-size:1.9rem;
     font-weight:600;
+}
+h2:not(:first-child) { 
+    margin-top:var(--padding-lg)
 }
 
 h3{
@@ -71,12 +81,23 @@ h3{
     font-weight:600;
 }
 
-header, main, footer{
+header, footer{
     padding:var(--padding-md) var(--padding-lg);
 }
 
 section{
     padding: var(--padding-md) 0;
+}
+
+.constrainer{
+    max-width:1200px;
+    display:flex;
+    gap:var(--padding-lg);
+    justify-content: center;
+    align-items: center;
+    margin:0 auto;
+    flex-direction:column;
+    padding:var(--padding-md)
 }
 
 header{
@@ -202,7 +223,34 @@ header .avatar{
 .menu-checkbox:checked ~ .menu-icon .bottom-bar {
     transform: rotate(-45deg) translate(0, -4px);
 }
+
+/* Hero Section */
+.hero{
+    background-color:var(--brand-dark);
+    color:white;
+    padding:var(--padding-lg);
+    font-size:larger;
+}
+
+.hero img{
+    max-width:400px;
+    border-radius:100%;
+    border: 4px solid var(--action);
+    width:100%;
+}
+
+/* Skills */
+
+
+/* Media Queries */
 @media (min-width: 769px) {
+
+    :root{
+    --padding-sm: 16px;
+    --padding-md: 32px;
+    --padding-lg: 64px;
+    --padding-xl: 128px;
+    }
     .menu {
         position: relative;
         flex-direction: row;
@@ -225,6 +273,11 @@ header .avatar{
 
     .menu-icon {
         display: none;
+    }
+
+    /* hero */
+    .hero .constrainer{
+        flex-direction:row;
     }
 }
 
