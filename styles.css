@@ -99,21 +99,19 @@ header .avatar{
 
 .menuToggle {
     position: relative;
+    z-index: 100;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .menu-checkbox {
-    opacity: 0;
+    display: none;
     z-index: 100;
-    position: absolute;
-    width:var(--hb-width);
-    height:var(--hb-height);
 }
 
 .menu-icon {
     display: block;
     cursor: pointer;
-    z-index:101;
-    position:relative;
 }
 
 .menu-bar {
@@ -138,10 +136,9 @@ header .avatar{
     background-color: var(--brand-bg);
     flex-direction: column;
     align-items: center;
-    transition: right 0.3s ease; 
+    transition: right 0.3s ease;
     border-left: 3px solid var(--brand);
     box-shadow: var(--default-shadow);
-    
 }
 
 .menu li {
@@ -151,14 +148,60 @@ header .avatar{
 .menu li a {
     text-decoration: none;
     color: var(--brand-dark);
-    font-weight:500;
-    font-size:1.1em;
+    font-weight: 500;
+    font-size: 1.1em;
 }
 
 .menu-checkbox:checked ~ .menu {
     right: 0; /* Slide the menu into view */
 }
 
+/* Hamburger Menu Styles */
+.menuToggle input {
+    display: block;
+    width: var(--hb-width);
+    height: var(--hb-height);
+    position: absolute;
+    cursor: pointer;
+    opacity: 0; /* hide this */
+    z-index: 2; /* and place it over the hamburger */
+    -webkit-touch-callout: none;
+}
+
+.menuToggle span {
+    display: block;
+    width: var(--hb-width);
+    height: var(--hb-stroke);
+    margin-bottom: var(--hb-gap);
+    position: relative;
+    background: black;
+    border-radius: 3px;
+    z-index: 1;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+                background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+                opacity 0.55s ease;
+}
+
+.menuToggle span .top-bar{
+    transform-origin: 0, 0;
+}
+.menuToggle span .bottom-bar{
+    transform-origin: var(--hb-width), calc(-2 * var(--hb-stroke) - var(--hb-gap)) ;
+}
+
+/* hide the middle bar when the toggle button is clicked */
+.menu-checkbox:checked ~ .menu-icon .middle-bar {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/* rotate the top bar and bottom bars to make a cross */
+.menu-checkbox:checked ~ .menu-icon .top-bar {
+    transform: rotate(45deg) translate(10px, calc(1.5 * var(--hb-stroke) + var(--hb-gap)));
+}
+.menu-checkbox:checked ~ .menu-icon .bottom-bar {
+    transform: rotate(-45deg) translate(0, -4px);
+}
 @media (min-width: 769px) {
     .menu {
         position: relative;
@@ -168,11 +211,20 @@ header .avatar{
         width: auto;
         right: auto;
         transition: none;
+        box-shadow:none;
+        border-left:none;
+        gap:var(--padding-md);
+    }
+    .menu li {
+        margin: 0 15px;
     }
 
-
+    .menu li a {
+        color: black;
+    }
 
     .menu-icon {
         display: none;
     }
 }
+
