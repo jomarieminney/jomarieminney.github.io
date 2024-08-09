@@ -1,3 +1,10 @@
 # jomarieminney.github.io
-My demo portfolio
-This demo is based on the coursework from Week 1 of the She Codes Plus program.
+This is a demonstration portfolio site created for the [She Codes Plus](https://shecodes.com.au/program/plus/) program.
+
+You can view this site online here: 
+
+[![View site - GH Pages](https://img.shields.io/badge/View_site-GH_Pages-2ea44f?style=for-the-badge)](https://jomarieminney.github.io)
+
+My actual personal website can be found here:
+>**[Jo's Blog & Personal Site](https://jominney.com)**
+
