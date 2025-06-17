@@ -256,6 +256,10 @@ header .avatar {
     h2{
         text-align:center;
     }
+
+    i{
+        color:var(--brand);
+    }
 }
 
 /* Media Queries */
