@@ -8,4 +8,3 @@ You can view this site online here:
 My actual personal website can be found here:
 >**[Jo's Blog & Personal Site](https://jominney.com)**
 
-added all my things here
